@@ -34,7 +34,7 @@ To build this project you will need Maven 2. You can get it at:
      
  Once started, the application should be available at:
  
-     http://localhost:8080/gtvg
+     http://localhost:8080/BookShelf
 
 ## License
      Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
