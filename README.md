@@ -3,7 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Introduction](#introduction)
-* [Contribution](#Contribution)
+* [Building](#Building)
 * [License](#license)
 
 ## General Info
@@ -13,6 +13,28 @@ This project is still under development. I plan to implement the Add, Edit butto
 Book Shelf is a library website like a cheap version of "goodreads". However, my version is done only using free software and does not contain any JavaScript. The main focus was the ability to explore the catalog from authors to publishers.
 
 This app is under the GNU General Public License.
+
+##Building
+
+To build this project you will need Maven 2. You can get it at:
+ 
+     http://maven.apache.org
+
+ Clean compilation products:
+ 
+     mvn clean
+     
+ Compile:
+ 
+     mvn compile
+     
+ Run in a tomcat server:
+ 
+     mvn tomcat7:run
+     
+ Once started, the application should be available at:
+ 
+     http://localhost:8080/gtvg
 
 ## License
      Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
