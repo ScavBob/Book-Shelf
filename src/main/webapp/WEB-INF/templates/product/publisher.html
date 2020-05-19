@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+		<div id="topbar" class="topbar">
+	<ul style="background-color: #FFDFD3">
+				<li><form action ="save" th:action="@{product/list}" th:object="${form}" method="post">
+				<input style="padding:10px"type="text" placeholder="Search.." name="search">
+				<button type="submit" th:value="${bookTitle}"><i class="fa fa-search"></i>Search..</button>
+			</form></li>
+			<li style="float:left"><a class="active" href="/home.html" th:href="@{/}">Home</a></li>
+			<!--<a href="#about" href="#userprofile" th:href="@{userprofile}">Profile</a>-->
+
+			</ul>
+	</div>
+  <body th:object="${publisher}">
+
+    <h1 th:text="*{name}">Publisher</h1>
+
+    <div>
+       <p>Description: <span th:text="*{description}">Description</span>.</p>
+	   <p>Books:</p>
+    </div>
+	    <table>
+      <thead>
+        <tr>
+          <th>TITLE</th>
+          <th>AUTHOR</th>
+          <th>PUBLISHER</th>
+        </tr>
+      </thead>
+      <tbody th:remove="all-but-first">
+        <tr th:each="book : *{books}">
+          <td> 															
+			<a href="book.html" th:text="${book.Title}" th:href="@{/book(bookTitle=${book.Title})}">Title</a>
+		  </td>
+          <td> 
+			<a href="author.html" th:text="${book.Author}" th:href="@{/author(authorName=${book.Author})}">Author</a>
+		  </td>
+          <td th:text="${book.Publisher}">Publisher</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+    
+  </body>
+  
+</html>
+

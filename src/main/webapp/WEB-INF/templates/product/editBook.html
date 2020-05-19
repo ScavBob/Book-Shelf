@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+
+    <h1>EDIT BOOK</h1>
+
+    <div>
+		<form action="addBookComplete.html" th:object="${book}" th:action="@{/product/list}"  method="post">
+			<table border="1">
+				<tr>
+					<td><label/>Title: </td>
+					<td><input type="text" th:field="*{title}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Author: </td>
+					<td><input type="text" th:field="*{author}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Publisher: </td>
+					<td><input type="text" th:field="*{publisher}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Series: </td>
+					<td><input type="text" th:field="*{bookseries}" /></td>
+				</tr>
+				<tr>
+					<td><label/>ISBN: </td>
+					<td><input type="number" th:field="*{isbn}" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit" /></td>
+				</tr>
+			</table>
+		</form>
+    </div>
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+  </body>
+  
+</html>

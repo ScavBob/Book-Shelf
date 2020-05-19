@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+
+    <h1>ADD A NEW BOOK</h1>
+
+    <div>
+		<!--<form action ="addBookComplete.html" th:action="@{/addBookComplete(${Book})}" th:object="${Book}" method="post">
+		<li style="list-style-type: none">
+			<ul>
+				<label for="title">Title:</label>
+				<dt><input type="text" th:field="*{title}"></dt>
+			</ul>
+			<ul>
+				<label for="author">Author:</label>
+				<dt><input type="text" th:field="*{author}"></dt>
+			</ul>
+			<ul>
+				<label for="publisher">Publisher:</label>
+				<dt><input type="text" th:field="*{publisher}"></dt>
+			</ul>
+			<ul>
+				<label for="series">Series:</label>
+				<dt><input type="text" th:field="*{series}"></dt>
+			</ul>
+			<ul>
+				<label for="isbn">ISBN:</label>
+				<dt><input type="number" th:field="*{ISBN}"></dt>
+			</ul>
+			<ul>
+			<input type="submit" value="Add Book" />
+		</form>-->
+		<form action="addBookComplete.html" th:object="${book}" th:action="@{/product/addBookComplete(book=${book})}"  method="post">
+			<table border="1">
+				<tr>
+					<td><label/>Title: </td>
+					<td><input type="text" th:field="*{title}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Author: </td>
+					<td><input type="text" th:field="*{author}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Publisher: </td>
+					<td><input type="text" th:field="*{publisher}" /></td>
+				</tr>
+				<tr>
+					<td><label/>Series: </td>
+					<td><input type="text" th:field="*{bookseries}" /></td>
+				</tr>
+				<tr>
+					<td><label/>ISBN: </td>
+					<td><input type="number" th:field="*{isbn}" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit" /></td>
+				</tr>
+			</table>
+		</form>
+    </div>
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+  </body>
+  
+</html>

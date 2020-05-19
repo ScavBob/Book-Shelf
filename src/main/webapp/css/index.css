@@ -1,0 +1,145 @@
+:root {
+	--color0: #FFFFFF;		/* Colour: White*/
+	--color1: #bae1ff;		/* Colour: Pastel Blue*/
+	--color2: #FFDFD3;		/* Colour: Pastel Pink well Lumber*/
+	--color3: #FF9AA2;		/* Colour: Pastel Red*/
+	--color4: #C7CEEA;		/* Colour: Pastel Purple*/
+	--color5: #F9F7E8;		/* Colour: Pastel White*/
+	--color6: #FF3D3D;		/* Colour: Bright Pastel Red*/
+	--color7: #F7EF64;		/* Colour: Weird Pastel Yellow*/
+	--color8: #928374;		/* Colour: Darker Pastel Red*/
+	--color9: #EEF1E6;		/* Colour: Blueish Pastel White*/
+	--color10: #C17565;		/* Colour: Pastel Brown*/
+	--color11: #D33B2E;		/* Colour: Pastel ?Powerful? Orange*/
+	--color12: #AB0020;		/* Colour: Pastel Beautiful Dark Red*/
+	--color13: #AFC7D0;		/* Colour: Light Pastel Blue*/
+	--color14: #c3e88d;		/* Colour: */
+	--color15: #ebdbb2;		/* Colour: */
+	--color16: #bb841a;		/* Colour: */
+	--color256: #36393E;	/* Colour: */
+	--color257: #ebdbb2;	/* Colour: */
+
+
+}
+
+html {
+  background-color: #EEF1E6;
+}
+
+body {
+  font-family: 'DejaVu Sans', Arial, Helvetica;
+  font-size: 12px;
+  background-color: #F9F7E8;
+  border: 1px solid #cccccc;
+  margin: 0px auto; 
+  padding: 20px 20px; 
+  width: 65%;
+}
+.topbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+	
+.topbar li{
+	float: right;
+}
+	
+.topbar li a {
+	font-family: bookman;
+	font-size: 16px;
+	display: block;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 18px 18px;
+	text-decoration: none;
+}
+	
+.topbar li a:hover {
+	background-color: #C7CEEA;
+}
+	
+.topbar a {
+	display: block;
+	padding: 10px;
+	background-color: #5CABAB;
+}
+
+.topbar li form {
+	font-family: bookman;
+	display: block;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 7px;
+	text-decoration: none;
+}
+
+.topbar li button {
+	font-family: bookman;
+	padding: 10px;
+	text-decoration: none;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+
+tr.odd td {
+  background-color: #AFC7D0;
+}
+
+td.number {
+  text-align: right;
+}
+
+
+table {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+table > tbody > tr > td, table > thead > tr > th {
+  padding: 2px 10px;
+  border-left: 1px dotted #000000;
+  vertical-align: top;
+  line-height: 20px;
+}
+
+table > tbody > tr, table > thead > tr {
+  border-bottom: 1px solid #000000;
+}
+
+table th {
+  background-color: #C17565;
+}
+
+table > tbody > tr > td > a{
+	text-decoration: none;
+	color: #FF3D3D;
+	text-decoration: none;
+	display: inline;
+	margin-left: 10px;
+	border: 0px;
+}
+
+table > tbody > tr > td > a:hover{
+	color: #928374;
+}
+
+ol > li {
+  margin-top: 10px;
+}
+
+a {
+	color: var(--color6);
+	text-decoration: none;
+	display: inline;
+}
+
+a:hover {
+    color:  #7F0F0B;
+}

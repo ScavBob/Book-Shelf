@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+	<div id="topbar" class="topbar">
+	<ul style="background-color: #FFDFD3">
+				<li>
+					<form action ="list.html" th:action="@{list}" th:object="${form}" method="post">
+						<input style="padding:10px"type="text" placeholder="Search for a Book.." name="search">
+						<button type="submit" th:value="${bookTitle}"><i class="fa fa-search"></i>Search..</button>
+					</form>
+				</li>
+			<li style="float:left"><a class="active" href="/home.html" th:href="@{/}">Home</a></li>
+			<!--<a href="#about" href="#userprofile" th:href="@{userprofile}">Profile</a>-->
+			</ul>
+	</div>
+  <body>
+    <h1>Book List</h1>
+    <form action ="addBook.html" th:action="@{/product/addBook}" method="post">
+        <input style="float:right; padding:4px; margin-bottom: 5px" type="submit" value="Add a New Book"/>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>TITLE</th>
+          <th>AUTHOR</th>
+          <th>PUBLISHER</th>
+        </tr>
+      </thead>
+      <tr th:each="prod : ${prods}" th:class="${prodStat.odd}? 'odd'">
+          <td> 															
+			<a href="book.html" th:text="${prod.Title}" th:href="@{/book(bookTitle=${prod.Title})}">Title</a>
+		  </td>
+          <td> 															
+			<a href="author.html" th:text="${prod.Author}" th:href="@{/author(authorName=${prod.Author})}">Author</a>
+		  </td>
+          <td> 
+			<a href="publisher.html" th:text="${prod.Publisher}" th:href="@{/publisher(publisherName=${prod.Publisher})}">Publisher</a>
+		  </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+    
+  </body>
+  
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+	<div id="topbar" class="topbar">
+	<ul style="background-color: #FFDFD3">
+				<li>
+				<form action ="save" th:action="@{product/list}" th:object="${form}" method="post">
+				<input style="padding:10px"type="text" placeholder="Search.." name="search">
+				<button type="submit" th:value="${bookTitle}"><i class="fa fa-search"></i>Search..</button>
+			</form></li>
+			<li style="float:left"><a class="active" href="home.html" th:href="@{/}">Home</a></li>
+			<!--<a href="#about" href="#userprofile" th:href="@{userprofile}">Profile</a>-->
+			</ul>
+	</div>
+<body>      
+<table>
+      <thead>
+        <tr>
+          <th>TITLE</th>
+          <th>AUTHOR</th>
+          <th>PUBLISHER</th>
+        </tr>
+      </thead>
+	  <h1 style="margin-left:40%; color:var(--color12)"> Welcome to Book Shelf. </h1>
+	     <form action ="../addBook.html" th:action="@{product/addBook}" method="post">
+        <input style="float:right; padding:4px; margin-top:5px; margin-bottom:5px" type="submit" value="Add a New Book"/>
+    </form>
+      <tbody th:remove="all-but-first">
+        <tr th:each="prod : ${prods}" th:class="${prodStat.odd}? 'odd'">
+          <td> 															
+			<a href="product/book.html" th:text="${prod.Title}" th:href="@{/book(bookTitle=${prod.Title})}">Title</a>
+		  </td>
+          <td> 															
+			<a href="product/author.html" th:text="${prod.Author}" th:href="@{/author(authorName=${prod.Author})}">Author</a>
+		  </td>
+          <td> 
+			<a href="product/publisher.html" th:text="${prod.Publisher}" th:href="@{/publisher(publisherName=${prod.Publisher})}">Publisher</a>
+		  </td>
+        </tr>
+		<tr class="odd">
+          <td>Blue Lettuce</td>
+          <td>9.55</td>
+          <td>no</td>
+        </tr>
+        <tr>
+          <td>Mild Cinnamon</td>
+          <td>1.99</td>
+          <td>yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  
+</html>
+

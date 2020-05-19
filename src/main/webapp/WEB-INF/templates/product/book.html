@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>The Book Shelf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/index.css" th:href="@{/css/index.css}" />
+  </head>
+	<div id="topbar" class="topbar">
+	<ul style="background-color: #FFDFD3">
+			<li>
+				<form action ="save" th:action="@{product/list}" th:object="${form}" method="post">
+					<input style="padding:10px"type="text" placeholder="Search.." name="search">
+					<button type="submit" th:value="${bookTitle}"><i class="fa fa-search"></i>Search..</button>
+				</form>
+			</li>
+			<li style="float:left"><a class="active" href="/home.html" th:href="@{/}">Home</a></li>
+			<!--<a href="#about" href="#userprofile" th:href="@{userprofile}">Profile</a>-->
+
+			</ul>
+	</div>
+  <body th:object="${book}">
+
+    <h1 th:text="*{title}">BOOK TITLE</h1>
+		<ul style="float:right; list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+			<li>
+				<form action ="save" th:action="@{product/editBook}" method="post"> 
+					<input type="submit" value="Edit Book" />
+				</form>
+			</li>
+	   </ul>
+    <div>
+	   <p> <a href="author.html" th:text="${book.Author}" th:href="@{/author(authorName=${book.Author})}">Author</a> </p>
+
+       <p>Description: <span th:text="*{description}">Description</span>.</p>
+    </div>
+  
+    <p>
+      <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+  </body>
+  
+</html>
+
