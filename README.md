@@ -14,7 +14,7 @@ Book Shelf is a library website like a cheap version of "goodreads". However, my
 
 This app is under the GNU General Public License.
 
-##Building
+## Building
 
 To build this project you will need Maven 2. You can get it at:
  
