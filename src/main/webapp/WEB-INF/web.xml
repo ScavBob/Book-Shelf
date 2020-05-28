@@ -6,7 +6,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
 
-    <display-name>thymeleafexamples-gtvg</display-name>
+    <display-name>BookShelf</display-name>
 
     <session-config>
         <session-timeout>60</session-timeout>
